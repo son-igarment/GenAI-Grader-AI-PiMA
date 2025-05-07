@@ -19,8 +19,8 @@ def plot_function_conture():
     contours = plt.contourf(X, Y, Z, levels=10, cmap='inferno')
 
     cbar = plt.colorbar(contours)
-    cbar.set_label('Giá trị của hàm $f(\\boldsymbol{x})$')
-    plt.title("Biểu đồ nhiệt hàm $f(\\boldsymbol{x})$")
+    cbar.set_label('Value of function $f(\\boldsymbol{x})$')
+    plt.title("Heatmap of function $f(\\boldsymbol{x})$")
     plt.xlabel("$x$")
     plt.ylabel("$y$")
     plt.grid(True)
@@ -56,8 +56,8 @@ def plot_function_derivative_vector_field():
     # Left plot: vector field
     q1 = ax1.quiver(X, Y, U_norm, V_norm, magnitude, cmap='Greys', scale=40)
     cb1 = fig.colorbar(q1, ax=ax1)
-    cb1.set_label("Độ lớn của vector")
-    ax1.set_title("Trường vector của $\\nabla f(\\boldsymbol{x})$")
+    cb1.set_label("Vector magnitude")
+    ax1.set_title("Vector field of $\\nabla f(\\boldsymbol{x})$")
     ax1.set_xlabel("$x$")
     ax1.set_ylabel("$y$")
     ax1.axis("equal")
@@ -67,7 +67,7 @@ def plot_function_derivative_vector_field():
     contour = ax2.contour(X_dense, Y_dense, Z, levels=10, cmap='inferno', alpha=0.6)
     ax2.clabel(contour, inline=True, fontsize=8)
     q2 = ax2.quiver(X, Y, U_norm, V_norm, magnitude, cmap='Greys', scale=40)
-    ax2.set_title("Trường vector của $\\nabla f(\\boldsymbol{x})$ + Đường đồng mức của $f(\\boldsymbol{x})$")
+    ax2.set_title("Vector field of $\\nabla f(\\boldsymbol{x})$ + Contour lines of $f(\\boldsymbol{x})$")
     ax2.set_xlabel("$x$")
     ax2.set_ylabel("$y$")
     ax2.axis("equal")
@@ -138,8 +138,8 @@ def test_function_derivative_vector_field(grad_f):
 
     q1 = ax1.quiver(X, Y, U_norm, V_norm, magnitude, cmap=greys_red, scale=40)
     cb1 = fig.colorbar(q1, ax=ax1)
-    cb1.set_label("Độ lớn của vector")
-    ax1.set_title("Trường vector của $\\nabla f(\\boldsymbol{x})$")
+    cb1.set_label("Vector magnitude")
+    ax1.set_title("Vector field of $\\nabla f(\\boldsymbol{x})$")
     ax1.set_xlabel("$x$")
     ax1.set_ylabel("$y$")
     ax1.axis("equal")
@@ -148,8 +148,8 @@ def test_function_derivative_vector_field(grad_f):
     # Right plot: vector field with jury overlay
     q2 = ax2.quiver(X, Y, U_norm, V_norm, magnitude, cmap=greys_red, scale=40)
     # cb2 = fig.colorbar(q2, ax=ax2)
-    # cb2.set_label("Độ lớn của vector (tested)")
-    ax2.set_title("Trường vector của $\\nabla f(\\boldsymbol{x})$ với overlay kết quả")
+    # cb2.set_label("Vector magnitude (tested)")
+    ax2.set_title("Vector field of $\\nabla f(\\boldsymbol{x})$ with result overlay")
     ax2.set_xlabel("$x$")
     ax2.set_ylabel("$y$")
     ax2.axis("equal")
@@ -165,7 +165,7 @@ def test_function_derivative_vector_field(grad_f):
     # Create a vector field for the jury
     q3 = ax2.quiver(X, Y, U_jury_norm, V_jury_norm, magnitude_jury, cmap=greys_green, scale=40)
     cb3 = fig.colorbar(q3, ax=ax2)
-    cb3.set_label("Độ lớn của vector (jury)")
+    cb3.set_label("Vector magnitude (jury)")
 
     plt.tight_layout()
     plt.show()

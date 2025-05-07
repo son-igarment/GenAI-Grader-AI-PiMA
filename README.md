@@ -1,89 +1,89 @@
 # GenAI Grader AI (PiMA)
 
-Hệ thống tự động chấm điểm bài tập về AI tạo sinh và các phương pháp số học.
+Automated grading system for generative AI and numerical methods assignments.
 
-## Thông tin
+## Information
 
-- **Tác giả:** Phạm Lê Ngọc Sơn
+- **Author:** Phạm Lê Ngọc Sơn
 - **Email:** son.phamlengoc@gmail.com
-- **Phiên bản:** 1.0.0
+- **Version:** 1.0.0
 
-## Mô tả dự án
+## Project Description
 
-Dự án "GenAI Grader AI (PiMA)" là một hệ thống tự động chấm điểm bài tập về AI tạo sinh và các phương pháp số học. Hệ thống được phát triển nhằm giúp giảng viên và sinh viên có thể đánh giá các bài tập về phương pháp Monte Carlo, kỹ thuật lấy mẫu (Importance Sampling), và các thuật toán tính toán số học khác.
+The "GenAI Grader AI (PiMA)" project is an automated grading system for assignments on generative AI and numerical methods. The system was developed to help instructors and students evaluate assignments on Monte Carlo methods, Importance Sampling techniques, and other numerical computation algorithms.
 
-## Cấu trúc dự án
+## Project Structure
 
 ```
 GenAI-Grader-AI-PiMA/
-├── .git/                      # Thư mục Git
-├── grader_homework_2/         # Bộ chấm điểm bài tập 2
-│   ├── __init__.py            # File khởi tạo module
-│   ├── grade_all.py           # Script chấm tất cả bài tập
-│   ├── grade_p1.py            # Script chấm bài 1
-│   ├── grade_p2.py            # Script chấm bài 2
-│   ├── grade_p3.py            # Script chấm bài 3
-│   ├── grade_p4.py            # Script chấm bài 4
-│   ├── optimize_for_final_grading.py # Tối ưu hóa việc chấm điểm
-│   ├── plot_approximation.py  # Vẽ đồ thị xấp xỉ
-│   └── requirements.txt       # Các thư viện cần thiết
+├── .git/                      # Git directory
+├── grader_homework_2/         # Homework 2 grader
+│   ├── __init__.py            # Module initialization file
+│   ├── grade_all.py           # Script to grade all assignments
+│   ├── grade_p1.py            # Script to grade problem 1
+│   ├── grade_p2.py            # Script to grade problem 2
+│   ├── grade_p3.py            # Script to grade problem 3
+│   ├── grade_p4.py            # Script to grade problem 4
+│   ├── optimize_for_final_grading.py # Optimization for final grading
+│   ├── plot_approximation.py  # Approximation plotting
+│   └── requirements.txt       # Required libraries
 │
-├── grader_homework_3/         # Bộ chấm điểm bài tập 3
-│   ├── __init__.py            # File khởi tạo module
-│   ├── grade_p1.py            # Script chấm bài 1
-│   ├── grade_p2.py            # Script chấm bài 2
-│   ├── grade_p3.py            # Script chấm bài 3
-│   ├── dual_number.py         # Implementation của Dual Numbers
-│   ├── function.npy           # Dữ liệu chấm điểm
-│   ├── U.npy                  # Ma trận U cho SVD
-│   ├── V.npy                  # Ma trận V cho SVD
-│   ├── Z.npy                  # Ma trận Z
-│   └── requirements.txt       # Các thư viện cần thiết
+├── grader_homework_3/         # Homework 3 grader
+│   ├── __init__.py            # Module initialization file
+│   ├── grade_p1.py            # Script to grade problem 1
+│   ├── grade_p2.py            # Script to grade problem 2
+│   ├── grade_p3.py            # Script to grade problem 3
+│   ├── dual_number.py         # Dual Numbers implementation
+│   ├── function.npy           # Grading data
+│   ├── U.npy                  # U matrix for SVD
+│   ├── V.npy                  # V matrix for SVD
+│   ├── Z.npy                  # Z matrix
+│   └── requirements.txt       # Required libraries
 │
-├── .gitignore                 # Các file được loại trừ khỏi Git
-├── .gitattributes             # Thuộc tính Git
-└── README.md                  # File hướng dẫn (đang đọc)
+├── .gitignore                 # Files excluded from Git
+├── .gitattributes             # Git attributes
+└── README.md                  # This guide
 ```
 
-## Chức năng chính
+## Main Features
 
 ### Grader Homework 2
-- Chấm điểm các bài tập về phương pháp Monte Carlo
-- Đánh giá kỹ thuật Importance Sampling
-- Kiểm tra các phương pháp tối ưu hóa sampling
+- Grading assignments on Monte Carlo methods
+- Evaluating Importance Sampling techniques
+- Testing sampling optimization methods
 
 ### Grader Homework 3
-- Đánh giá hiệu suất của Dual Numbers
-- Chấm điểm các kỹ thuật xấp xỉ hàm số
-- Thực hiện kiểm tra SVD (Singular Value Decomposition)
+- Evaluating Dual Numbers performance
+- Grading function approximation techniques
+- Performing SVD (Singular Value Decomposition) checks
 
-## Cách sử dụng
+## Usage
 
-### Yêu cầu cài đặt
+### Requirements
 
-1. Python 3.8 trở lên
-2. Các thư viện trong file requirements.txt của mỗi homework
+1. Python 3.8 or higher
+2. Libraries listed in the requirements.txt file for each homework
 
-### Cài đặt
+### Installation
 
 ```bash
-# Clone dự án về máy (nếu chưa có)
+# Clone the project (if not already available)
 git clone https://github.com/your-username/GenAI-Grader-AI-PiMA.git
 cd GenAI-Grader-AI-PiMA
 
-# Cài đặt thư viện cho Homework 2
+# Install libraries for Homework 2
 pip install -r grader_homework_2/requirements.txt
 
-# Cài đặt thư viện cho Homework 3
+# Install libraries for Homework 3
 pip install -r grader_homework_3/requirements.txt
 ```
 
-### Chấm điểm bài tập 2
+### Grading Homework 2
 
 ```python
 from grader_homework_2.grade_all import grade_all
 
-# Gọi hàm chấm điểm với các tham số là các hàm/lớp cần chấm
+# Call the grading function with the functions/classes to be graded
 grade_all(
     sample_needle,
     is_lie_across,
@@ -92,28 +92,28 @@ grade_all(
     pdf_IS,
     better_sampling_IS,
     better_pdf_IS,
-    is_logging=True  # Đặt True để hiển thị chi tiết quá trình chấm
+    is_logging=True  # Set to True to display detailed grading process
 )
 ```
 
-### Chấm điểm bài tập 3
+### Grading Homework 3
 
 ```python
-# Chấm điểm phần 1
+# Grade part 1
 from grader_homework_3.grade_p1 import grade as grade_p1
 result_p1 = grade_p1(
     your_function_p1,
     is_logging=True
 )
 
-# Chấm điểm phần 2
+# Grade part 2
 from grader_homework_3.grade_p2 import grade as grade_p2
 result_p2 = grade_p2(
     your_function_p2,
     is_logging=True
 )
 
-# Chấm điểm phần 3
+# Grade part 3
 from grader_homework_3.grade_p3 import grade as grade_p3
 result_p3 = grade_p3(
     your_function_p3,
@@ -121,12 +121,12 @@ result_p3 = grade_p3(
 )
 ```
 
-## Liên hệ và đóng góp
+## Contact and Contributions
 
-Nếu bạn có bất kỳ câu hỏi hoặc đề xuất nào, vui lòng liên hệ:
-- **Email:** sonnguyen@example.com (thay thế bằng email thật của bạn)
-- **GitHub Issues:** Tạo issue mới trong repository
+If you have any questions or suggestions, please contact:
+- **Email:** son.phamlengoc@gmail.com
+- **GitHub Issues:** Create a new issue in the repository
 
-## Giấy phép
+## License
 
-© 2023 Phạm Lê Ngọc Sơn. Tất cả các quyền được bảo lưu.
+© 2023 Phạm Lê Ngọc Sơn. All rights reserved.

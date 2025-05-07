@@ -23,7 +23,7 @@ def plot_approximation(
     num_trials: int
 ):
     if GradingOptimizer.is_optimized_for_final_grading:
-        print("Hàm này đã bị tối ưu hóa cho việc chấm điểm cuối cùng. Không thể chạy hàm này.")
+        print("This function has been optimized for final grading. Cannot run this function.")
         return
     
     random.seed(student_id)
@@ -40,10 +40,10 @@ def plot_approximation(
     # Plot histogram
     plt.figure(figsize=(10, 6))
     plt.hist(approximations, bins=30, color='blue', edgecolor='black', alpha=0.7)
-    plt.axvline(x=sample_mean, color='green', linestyle='dashed', linewidth=2, label=f"Trung bình mẫu: {sample_mean:.5f}")
-    plt.axvline(x=true_value, color='red', linestyle='dashed', linewidth=2, label=f"Giá trị thực của {var_name}: {true_value:.5f}")
-    plt.xlabel(f"Giá trị {var_name} xấp xỉ")
-    plt.ylabel("Tần số")
-    plt.title(f"Biểu đồ phần bố xấp xỉ {var_name} bằng {method_name}\nTrung bình mẫu: {sample_mean:.5f}, Phương sai mẫu: {sample_variance:.5f}")
+    plt.axvline(x=sample_mean, color='green', linestyle='dashed', linewidth=2, label=f"Sample Mean: {sample_mean:.5f}")
+    plt.axvline(x=true_value, color='red', linestyle='dashed', linewidth=2, label=f"True Value of {var_name}: {true_value:.5f}")
+    plt.xlabel(f"Approximated {var_name} Value")
+    plt.ylabel("Frequency")
+    plt.title(f"Distribution of {var_name} Approximation using {method_name}\nSample Mean: {sample_mean:.5f}, Sample Variance: {sample_variance:.5f}")
     plt.legend()
     plt.show()

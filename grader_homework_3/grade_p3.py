@@ -19,7 +19,7 @@ def plot_samples_with_contour(f, samples):
     # Left: Heatmap only
     ax1 = fig.add_subplot(gs[0])
     _, _, _, img1 = ax1.hist2d(x_samples, y_samples, bins=200, cmap='viridis', alpha=0.8)
-    ax1.set_title("Biểu đồ nhiệt của các điểm đã lấy mẫu")
+    ax1.set_title("Heatmap of sampled points")
     ax1.set_xlabel("$x$")
     ax1.set_ylabel("$y$")
     ax1.set_aspect("equal", adjustable="box")
@@ -31,7 +31,7 @@ def plot_samples_with_contour(f, samples):
     contours = ax2.contour(X, Y, Z, levels=10, linewidths=1, cmap='inferno')
 
     ax2.clabel(contours, inline=True, fontsize=8)
-    ax2.set_title("Biểu đồ nhiệt + Đường đồng mức của $f(\\boldsymbol{x})$")
+    ax2.set_title("Heatmap + Contour lines of $f(\\boldsymbol{x})$")
     ax2.set_xlabel("$x$")
     ax2.set_ylabel("$y$")
     ax2.set_aspect("equal", adjustable="box")
@@ -39,13 +39,13 @@ def plot_samples_with_contour(f, samples):
 
     # Clean colorbar on the side
     cax = fig.add_subplot(gs[2])
-    fig.colorbar(img2, cax=cax, label='Mật độ điểm')
+    fig.colorbar(img2, cax=cax, label='Point density')
 
     plt.show()
 
 def grad_f_fast(x: np.ndarray) -> np.ndarray:
     """
-    Tính đạo hàm của hàm đồng biến với hàm mật độ xác suất mục tiêu $p(x)$
+    Calculate the gradient of a function that varies with the target probability density function $p(x)$
     """
 
     def f(x, y):

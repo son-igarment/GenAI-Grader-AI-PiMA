@@ -16,9 +16,9 @@ def hidden_function(x, y):
 
 def plot_samples(samples: list[tuple[float, float]]):
     """
-    Hàm vẽ biểu đồ nhiệt của các điểm đã lấy mẫu.
+    Function to plot a heatmap of sampled points.
     Args:
-        samples (list[tuple[float, float]]): Danh sách các điểm (x, y) đã lấy mẫu.
+        samples (list[tuple[float, float]]): List of sampled (x, y) points.
     """
     x_samples, y_samples = zip(*samples)
     x_samples = np.array(x_samples)
@@ -28,7 +28,7 @@ def plot_samples(samples: list[tuple[float, float]]):
 
     # Create the heatmap
     hist = plt.hist2d(y_samples, -x_samples, bins=180, cmap='viridis', alpha=0.8)
-    plt.title("Biểu đồ nhiệt của các điểm đã lấy mẫu")
+    plt.title("Heatmap of Sampled Points")
     plt.xlabel("$x$")
     plt.ylabel("$y$")
     plt.gca().set_aspect("equal", adjustable="box")
